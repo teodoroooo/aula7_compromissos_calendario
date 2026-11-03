@@ -222,9 +222,9 @@ class _TelaCompromissosState extends State<TelaCompromissos> {
     if (inicio == null) return 'Data não informada';
 
     if (compromisso.diaInteiro) {
-      // No calendário, o fim de um evento de dia inteiro é o dia seguinte
-      // ao último dia do evento.
-      final ultimoDia = fim?.subtract(const Duration(days: 1));
+      // No Android, o device_calendar já ajusta o fim de um evento de dia
+      // inteiro para o último dia do evento.
+      final ultimoDia = fim;
 
       if (ultimoDia == null || !ultimoDia.isAfter(inicio)) {
         return '${formatarData(inicio)} • Dia inteiro';

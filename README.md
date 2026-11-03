@@ -30,13 +30,20 @@ Arquivo `android/app/src/main/AndroidManifest.xml`, dentro de `<manifest>` e ant
 
 ## Como executar
 
-O repositório contém o código-fonte (`lib/`), o `pubspec.yaml` e o `AndroidManifest.xml` já com as permissões. Para gerar os demais arquivos do Android, rode na raiz do projeto. O `AndroidManifest.xml` que já existe é mantido.
+Execute em um dispositivo ou emulador Android:
 
 ```bash
-flutter create . --platforms=android
 flutter pub get
 flutter run
 ```
+
+## Testes
+
+```bash
+flutter test
+```
+
+Os testes em `test/widget_test.dart` simulam o lado nativo do `device_calendar`. Eles cobrem a permissão negada, o indicador de carregamento, a lista vazia, a falha na consulta e a listagem em ordem cronológica de vários calendários, com identificação dos compromissos de dia inteiro.
 
 Se a compilação der problema, acrescente ao `android/gradle.properties`:
 
